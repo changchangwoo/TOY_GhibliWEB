@@ -1,20 +1,21 @@
-import {init} from './utils/router.js'
-import MainPage from './components/MainPage.js'
+import { init } from "./utils/router.js";
+import MainPage from "./MainPage/MainPage.js";
 
 export default function App($target) {
-    this.route = () => {
-        const {pathname} = location
-        console.log(pathname)
-        console.log($target)
+  this.route = () => {
+    const { pathname } = location;
+    console.log(pathname);
+    console.log($target);
 
-        $target.innerHTML = ''
+    $target.innerHTML = "";
 
-        if(pathname === '/') {
-            new MainPage({$target}).render()
-        }
+    if (pathname === "/index.html") {
+      new MainPage($target).render();
     }
-    init(this.route)
+  };
+  init(this.route);
 
-    this.route()
-    
+  this.route();
+
+  window.addEventListener("popstate", this.route);
 }

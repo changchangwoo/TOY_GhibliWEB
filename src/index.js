@@ -1,3 +1,5 @@
-import App from './App.js'
+import App from "./App.js";
+import Nav from "./components/Nav.js";
 
-new App({ $target : document.getElementById('App')})
+new Nav({ $target: document.getElementById("Nav") });
+new App({ $target: document.getElementById("App") });
