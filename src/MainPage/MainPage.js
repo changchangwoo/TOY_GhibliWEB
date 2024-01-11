@@ -6,6 +6,7 @@ export default function MainPage({ $target }) {
   $page.className = "mainPage";
 
   const logo = createLogo({ $parent: $page });
+  const sliderController = SliderController({ $parent: $page });
 
   this.render = () => {
     $target.appendChild($page);
