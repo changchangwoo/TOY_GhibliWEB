@@ -1,20 +1,22 @@
 import SliderEvent from "./SliderEvent.js";
 
 export default function SliderController({ $parent }) {
-  const sliderEvent = new SliderEvent
+  const sliderEvent = new SliderEvent();
   const $sliderControllerContainer = document.createElement("div");
   const $selectedName = document.createElement("div");
   const $prevBtn = document.createElement("div");
   const $nextBtn = document.createElement("div");
   const $prevBtnimg = document.createElement("img");
   const $nextBtnimg = document.createElement("img");
-  var selectedName = ''
+  var selectedName = "";
 
   $prevBtnimg.src = "../../source/prevBtn.png";
   $nextBtnimg.src = "../../source/nextBtn.png";
 
   $sliderControllerContainer.className = "sliderControllerContainer";
   $selectedName.className = "selectedName";
+  $selectedName.classList.add("show");
+
   $prevBtn.className = "prevBtn";
   $nextBtn.className = "nextBtn";
 
@@ -26,27 +28,29 @@ export default function SliderController({ $parent }) {
   $sliderControllerContainer.appendChild($selectedName);
   $sliderControllerContainer.appendChild($nextBtn);
 
-  $sliderControllerContainer.classList.add('show')
+  $nextBtn.addEventListener("click", () => {
+    selectedName = sliderEvent.moveToSelected("next");
+    this.selectedNameChange();
+  });
+
+  $prevBtn.addEventListener("click", () => {
+    selectedName = sliderEvent.moveToSelected("prev");
+    this.selectedNameChange();
+  });
 
   this.render = () => {
     $parent.appendChild($sliderControllerContainer);
-    $nextBtn.addEventListener("click", () => {
-      selectedName = sliderEvent.moveToSelected("next");
-      this.selectedNameChange()
-    });
-
-    $prevBtn.addEventListener("click", () => {
-      selectedName = sliderEvent.moveToSelected("prev");
-      this.selectedNameChange()
-    });
-
-  }
+    $sliderControllerContainer.classList.remove("show");
+    setTimeout(() => {
+      $sliderControllerContainer.classList.add("show");
+    }, 300);
+  };
 
   this.selectedNameChange = () => {
-    $selectedName.innerHTML = selectedName
-    $selectedName.classList.remove('show')
-    setTimeout(()=> {
-      $selectedName.classList.add('show')
-    }, 300)
-  }
+    $selectedName.innerHTML = selectedName;
+    $selectedName.classList.remove("show");
+    setTimeout(() => {
+      $selectedName.classList.add("show");
+    }, 300);
+  };
 }

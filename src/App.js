@@ -2,15 +2,14 @@ import { init } from "./utils/router.js";
 import MainPage from "./MainPage/MainPage.js";
 
 export default function App($target) {
+  const mainPage = new MainPage($target);
   this.route = () => {
     const { pathname } = location;
-    console.log(pathname);
-    console.log($target);
 
     $target.innerHTML = "";
 
     if (pathname === "/index.html") {
-      new MainPage($target).render();
+      mainPage.render();
     }
   };
   init(this.route);

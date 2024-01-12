@@ -1,10 +1,11 @@
-import SliderEvent from "./SliderEvent.js"
+import SliderEvent from "./SliderEvent.js";
 
 export default function Slider({ $parent }) {
-    const $sliderContainer = document.createElement("div")
-    $sliderContainer.id = "sliderContainer"
-    $sliderContainer.innerHTML =
-        `
+  const $sliderContainer = document.createElement("div");
+  const sliderEvent = new SliderEvent();
+
+  $sliderContainer.id = "sliderContainer";
+  $sliderContainer.innerHTML = `
     <div class="hideLeft">
     센과 치히로의 행방불명
         <img src="source/chihiro.jpg">
@@ -41,10 +42,13 @@ export default function Slider({ $parent }) {
 바람 계곡의 나우시카
 <img src="source/nausicaa.jpg">
 </div>
-    `
-    this.render = () => {
-        $parent.appendChild($sliderContainer)
-        new SliderEvent().render()
+    `;
 
-    }
+  this.render = () => {
+    $parent.appendChild($sliderContainer);
+    $sliderContainer.classList.remove("show");
+    setTimeout(() => {
+      $sliderContainer.classList.add("show");
+    }, 1000);
+  };
 }

@@ -8,9 +8,9 @@ export default function CreateLogo({ $parent }) {
   $mainLogo.innerHTML = "STUDIO GHIBLI";
   $subLogo.innerHTML = "Quiet beauty that evokes memories";
 
-  $mainLogo.classList.remove("show");
-
   this.startAnimation = () => {
+    $mainLogo.classList.remove("show");
+    $subLogo.classList.remove("show");
     setTimeout(() => {
       $mainLogo.classList.add("show");
       setTimeout(() => {

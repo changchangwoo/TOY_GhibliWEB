@@ -5,19 +5,20 @@ import SliderController from "./SliderController.js";
 export default function MainPage({ $target }) {
   const $page = document.createElement("div");
   $page.className = "mainPage";
+  $target.appendChild($page);
 
   const createLogo = new CreateLogo({ $parent: $page });
   const sliderController = new SliderController({ $parent: $page });
-  const slider = new Slider({ $parent : $page});
+  const slider = new Slider({ $parent: $page });
 
   this.render = () => {
-    $target.appendChild($page);
-    document.addEventListener("DOMContentLoaded", createLogo.startAnimation);
-    setTimeout(()=>{
-      sliderController.render()
-      setTimeout(()=> {
-        slider.render()
-      }, 700)
-    },500)
+    console.log("렌더링중");
+    createLogo.startAnimation();
+    setTimeout(() => {
+      sliderController.render();
+    }, 500);
+    setTimeout(() => {
+      slider.render();
+    }, 500);
   };
 }
