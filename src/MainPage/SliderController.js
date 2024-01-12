@@ -1,10 +1,14 @@
+import SliderEvent from "./SliderEvent.js";
+
 export default function SliderController({ $parent }) {
+  const sliderEvent = new SliderEvent
   const $sliderControllerContainer = document.createElement("div");
   const $selectedName = document.createElement("div");
   const $prevBtn = document.createElement("div");
   const $nextBtn = document.createElement("div");
   const $prevBtnimg = document.createElement("img");
   const $nextBtnimg = document.createElement("img");
+  var selectedName = ''
 
   $prevBtnimg.src = "../../source/prevBtn.png";
   $nextBtnimg.src = "../../source/nextBtn.png";
@@ -16,19 +20,33 @@ export default function SliderController({ $parent }) {
 
   $prevBtn.appendChild($prevBtnimg);
   $nextBtn.appendChild($nextBtnimg);
-  $selectedName.innerHTML = "센과 치히로의 행방 불명";
+  $selectedName.innerHTML = "마녀 배달부 키키";
 
   $sliderControllerContainer.appendChild($prevBtn);
   $sliderControllerContainer.appendChild($selectedName);
   $sliderControllerContainer.appendChild($nextBtn);
 
-  $parent.appendChild($sliderControllerContainer);
+  $sliderControllerContainer.classList.add('show')
 
-  $nextBtn.addEventListener("click", () => {
-    console.log("우");
-  });
+  this.render = () => {
+    $parent.appendChild($sliderControllerContainer);
+    $nextBtn.addEventListener("click", () => {
+      selectedName = sliderEvent.moveToSelected("next");
+      this.selectedNameChange()
+    });
 
-  $prevBtn.addEventListener("click", () => {
-    console.log("좌");
-  });
+    $prevBtn.addEventListener("click", () => {
+      selectedName = sliderEvent.moveToSelected("prev");
+      this.selectedNameChange()
+    });
+
+  }
+
+  this.selectedNameChange = () => {
+    $selectedName.innerHTML = selectedName
+    $selectedName.classList.remove('show')
+    setTimeout(()=> {
+      $selectedName.classList.add('show')
+    }, 300)
+  }
 }

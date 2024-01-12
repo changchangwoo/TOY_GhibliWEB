@@ -1,4 +1,4 @@
-export default function createLogo({ $parent }) {
+export default function CreateLogo({ $parent }) {
   const $mainLogo = document.createElement("div");
   const $subLogo = document.createElement("div");
 
@@ -10,7 +10,7 @@ export default function createLogo({ $parent }) {
 
   $mainLogo.classList.remove("show");
 
-  const startAnimation = () => {
+  this.startAnimation = () => {
     setTimeout(() => {
       $mainLogo.classList.add("show");
       setTimeout(() => {
@@ -21,8 +21,4 @@ export default function createLogo({ $parent }) {
 
   $parent.appendChild($mainLogo);
   $parent.appendChild($subLogo);
-
-  return {
-    startAnimation,
-  };
 }

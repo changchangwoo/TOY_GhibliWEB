@@ -1,7 +1,6 @@
 html,
 body {
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -21,7 +20,7 @@ body {
     /* 이미지의 중앙을 기준으로 배경을 설정 */
     /* 가로는 자동으로 조절, 세로는 100%로 유지 */
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     overflow: hidden;
 }
 
@@ -61,6 +60,12 @@ body {
     height: 100px;
     position: fixed;
     z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.navConatiner:hover {
+    opacity: 1;
 }
 
 .navConatiner ul {
@@ -89,6 +94,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s
+}
+
+.sliderControllerContainer.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .prevBtn,
@@ -118,6 +131,109 @@ body {
     font-weight: normal;
     width: 500px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 1s, opaicity 0.5s;
+}
+
+.selectedName.show {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Slider */
+
+#sliderContainer {
+    background-color: rgb(255, 255, 255, 0.7);
+    overflow: hidden;
+    height: 450px;
+    position: relative;
+    border-radius: 50px;
+    margin-top: 30px;
+}
+
+#sliderContainer div {
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s;
+    opacity: 1;
+    font-size: 0px;
+}
+
+#sliderContainer div img {
+    width: 300px;
+    transition: width 1s;
+    border-radius: 20px;
+}
+
+#sliderContainer .hideLeft {
+    left: 0%;
+    opacity: 0;
+    transform: translateY(100%)translateX(-100%)
+}
 
 
+#sliderContainer .hideRight {
+    left: 100%;
+    opacity: 0;
+    transform: translateY(100%)translateX(-50%)
+}
+
+#sliderContainer .hideLeft img {
+    width: 100px;
+}
+
+#sliderContainer .hideRight img {
+    width: 100px;
+}
+
+#sliderContainer .prev {
+    z-index: 5;
+    left: 30%;
+    transform: translateY(100px)translateX(-50%)
+}
+
+#sliderContainer .next {
+    z-index: 5;
+    left: 70%;
+    transform: translateY(100px)translateX(-50%)
+}
+
+#sliderContainer .selected {
+    z-index: 10;
+    left: 50%;
+    transform: translateY(3%) translateX(-50%);
+}
+
+#sliderContainer .prevLeftSecond {
+    z-index: 3;
+    left: 15%;
+    transform: translateY(100%) translateX(0%);
+    opacity: 0.7;
+}
+
+#sliderContainer .nextRightSecond {
+    z-index: 3;
+    left: 85%;
+    transform: translateY(100%) translateX(-100%);
+    opacity: 0.7;
+}
+
+#sliderContainer .prev img {
+    width: 200px;
+}
+
+#sliderContainer .next img {
+    width: 200px;
+}
+
+#sliderContainer .selected img {
+    width: 300px;
+}
+
+#sliderContainer .prevLeftSecond img {
+    width: 100px;
+}
+
+#sliderContainer .nextRightSecond img {
+    width: 100px;
 }

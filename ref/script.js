@@ -1,13 +1,12 @@
 function moveToSelected(element) {
   var selected;
   if (element === "next") {
-    selected = document.querySelector(".selected").nextElementSibling;
+      selected = document.querySelector(".selected").nextElementSibling
   } else if (element === "prev") {
-    selected = document.querySelector(".selected").previousElementSibling;
+      selected = document.querySelector(".selected").previousElementSibling
   } else {
-    selected = element;
+      selected = element;
   }
-
   var next = selected.nextElementSibling;
   var prev = selected.previousElementSibling;
   var prevSecond = prev.previousElementSibling;
@@ -25,36 +24,37 @@ function moveToSelected(element) {
   nextSecond.classList.remove();
   nextSecond.classList.add("nextRightSecond");
 
-  var nextSiblings = [nextSecond.nextElementSibling];
-  console.log(nextSiblings);
-  nextSiblings.forEach(function (sibling) {
-    console.log(sibling);
-    sibling.classList.remove();
-    sibling.classList.add("hideRight");
+  var nextSiblings = setSiblings(nextSecond.nextElementSibling)
+  var prevSiblings = setSiblings(prevSecond.previousElementSibling)
+
+  nextSiblings.forEach(sibling => {
+      sibling.classList.remove();
+      sibling.classList.add("hideRight")
+      
   });
 
-  var prevSiblings = [prevSecond.previousElementSibling];
-  prevSiblings.forEach(function (sibling) {
-    sibling.classList.remove();
-    sibling.classList.add("hideLeft");
-  });
+  prevSiblings.forEach(sibling => {
+      sibling.classList.remove();
+      sibling.classList.add("hideLeft")
+  })
 }
 
-var carouselDivs = document.querySelectorAll("#sliderContainer div");
-carouselDivs.forEach((div) => {
-  div.addEventListener("click", function () {
-    moveToSelected(this);
-  });
-});
-
-var prevButton = document.querySelector("#prevBtn");
-prevButton.addEventListener("click", () => {
-  $selected = document.querySelector(".selected");
-  console.log($selected);
+var setSiblings = (sibling) => {
+  let siblings = []
+  while(sibling) {
+      if(sibling.nodeType === 1) {
+          siblings.push(sibling)
+      }
+      sibling = sibling.nextSibling
+  }
+  return siblings
+}
+var prevButton = document.getElementById("prev");
+prevButton.addEventListener("click", function() {
   moveToSelected("prev");
 });
 
-var nextButton = document.querySelector("#nextBtn");
-nextButton.addEventListener("click", () => {
+var nextButton = document.getElementById("next");
+nextButton.addEventListener("click", function() {
   moveToSelected("next");
 });
