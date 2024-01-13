@@ -12,13 +12,9 @@ export default function Nav({ $target }) {
   $target.appendChild($navContainer);
 
   const $navHome = document.querySelector("ul li");
-  console.log($navHome);
-
   $navHome.addEventListener("click", () => {
-    routeChange("/detail");
+    routeChange("/index.html");
   });
 
-  this.render = () => {
-    
-  }
+  this.render = () => {};
 }

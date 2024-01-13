@@ -1,20 +1,20 @@
 import { init } from "./utils/router.js";
 import MainPage from "./MainPage/MainPage.js";
-import DetailPage from './DetailPage/DetailPage.js'
+import DetailPage from "./DetailPage/DetailPage.js";
 
-export default function App($target) {
-  const mainPage = new MainPage($target);
-  const detailPage = new DetailPage($target);
+export default function App({ $target }) {
+  const mainPage = new MainPage({ $target });
+  const detailPage = new DetailPage({ $target });
+
   this.route = () => {
-    console.log($target)
+    $target.innerHTML = ``;
     const { pathname } = location;
     if (pathname === "/index.html") {
       mainPage.render();
-    } else if (pathname === "/detail") {
-      console.log('동작은함')
+    } else if (pathname.indexOf("/detail/") === 0) {
+      const [, , detailMovie] = pathname.split("/");
       detailPage.render();
     }
-
   };
 
   init(this.route);

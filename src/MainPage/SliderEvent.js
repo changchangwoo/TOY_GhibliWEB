@@ -1,12 +1,11 @@
 import GaugeController from "./GaugeController.js";
 
 export default function SliderEvent() {
-  const gaugeController = new GaugeController({ $parent : 'temp'})
+  const gaugeController = new GaugeController({ $parent: "temp" });
 
-    this.moveToSelected = (element) => {
-      console.log(gaugeController)
-      const divElements = document.querySelectorAll('#sliderContainer.show div');
-      var selected;
+  this.moveToSelected = (element) => {
+    const divElements = document.querySelectorAll("#sliderContainer.show div");
+    var selected;
     if (element === "next") {
       selected = document.querySelector(".selected").nextElementSibling;
     } else if (element === "prev") {
@@ -26,15 +25,13 @@ export default function SliderEvent() {
     selected.classList = [];
     selected.classList.add("selected");
 
-    divElements.forEach(element => {
-      element.removeEventListener("mouseenter", gaugeController.enterSelected)
-      element.removeEventListener("mouseenter", gaugeController.leaveSelected)
+    divElements.forEach((element) => {
+      element.removeEventListener("mouseenter", gaugeController.enterSelected);
+      element.removeEventListener("mouseenter", gaugeController.leaveSelected);
     });
 
-    console.log(divElements)
-
-    selected.addEventListener("mouseenter", gaugeController.enterSelected)
-    selected.addEventListener("mouseleave", gaugeController.leaveSelected)
+    selected.addEventListener("mouseenter", gaugeController.enterSelected);
+    selected.addEventListener("mouseleave", gaugeController.leaveSelected);
 
     if (prev) {
       prev.classList = [];
@@ -94,5 +91,4 @@ export default function SliderEvent() {
     }
     return siblings;
   };
-
 }

@@ -1,3 +1,5 @@
+import { delay } from "../utils/delay.js";
+
 export default function Slider({ $parent }) {
   const $sliderContainer = document.createElement("div");
   $sliderContainer.id = "sliderContainer";
@@ -40,11 +42,10 @@ export default function Slider({ $parent }) {
 </div>
     `;
 
-  this.render = () => {
+  this.render = async () => {
     $parent.appendChild($sliderContainer);
     $sliderContainer.classList.remove("show");
-    setTimeout(() => {
-      $sliderContainer.classList.add("show");
-    }, 1000);
+    await delay(500);
+    $sliderContainer.classList.add("show");
   };
 }

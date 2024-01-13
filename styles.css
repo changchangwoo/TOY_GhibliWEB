@@ -46,7 +46,7 @@ body {
 #subLogo {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 1s, transform 1s;
 }
 
 #mainLogo.show,
@@ -131,14 +131,6 @@ body {
     font-weight: normal;
     width: 500px;
     text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: transform 1s, opaicity 0.5s;
-}
-
-.selectedName.show {
-    opacity: 1;
-    transform: translate(0);
 }
 
 /* Slider */
@@ -234,7 +226,7 @@ body {
 
 #sliderContainer .selected img {
     width: 300px;
-    transition:  all 1s;
+    transition: width 1s, transform 3s, filter 3s;
 }
 
 #sliderContainer .selected img:hover {
@@ -283,5 +275,5 @@ body {
     width: 0%;
     height: 5px;
     background-color: white;
-    transition: all 3s;
+    transition: all 2s;
 }

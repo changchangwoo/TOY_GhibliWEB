@@ -1,3 +1,4 @@
+import { delay } from "../utils/delay.js";
 import SliderEvent from "./SliderEvent.js";
 
 export default function SliderController({ $parent }) {
@@ -15,7 +16,6 @@ export default function SliderController({ $parent }) {
 
   $sliderControllerContainer.className = "sliderControllerContainer";
   $selectedName.className = "selectedName";
-  $selectedName.classList.add("show");
 
   $prevBtn.className = "prevBtn";
   $nextBtn.className = "nextBtn";
@@ -38,19 +38,14 @@ export default function SliderController({ $parent }) {
     this.selectedNameChange();
   });
 
-  this.render = () => {
+  this.render = async () => {
     $parent.appendChild($sliderControllerContainer);
     $sliderControllerContainer.classList.remove("show");
-    setTimeout(() => {
-      $sliderControllerContainer.classList.add("show");
-    }, 300);
+    await delay(300);
+    $sliderControllerContainer.classList.add("show");
   };
 
   this.selectedNameChange = () => {
     $selectedName.innerHTML = selectedName;
-    $selectedName.classList.remove("show");
-    setTimeout(() => {
-      $selectedName.classList.add("show");
-    }, 300);
   };
 }
