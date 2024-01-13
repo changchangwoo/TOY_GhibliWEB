@@ -1,6 +1,12 @@
+import GaugeController from "./GaugeController.js";
+
 export default function SliderEvent() {
-  this.moveToSelected = (element) => {
-    var selected;
+  const gaugeController = new GaugeController({ $parent : 'temp'})
+
+    this.moveToSelected = (element) => {
+      console.log(gaugeController)
+      const divElements = document.querySelectorAll('#sliderContainer.show div');
+      var selected;
     if (element === "next") {
       selected = document.querySelector(".selected").nextElementSibling;
     } else if (element === "prev") {
@@ -14,13 +20,21 @@ export default function SliderEvent() {
       var prevSecond = prev ? prev.previousElementSibling : null;
       var nextSecond = next ? next.nextElementSibling : null;
     } else {
-      // 예외 처리: 선택된 DOM의 Sibling이 없는 경우
       console.log("선택된 DOM의 Sibling이 없습니다.");
-      // 또는 원하는 예외 처리를 수행하세요.
     }
 
     selected.classList = [];
     selected.classList.add("selected");
+
+    divElements.forEach(element => {
+      element.removeEventListener("mouseenter", gaugeController.enterSelected)
+      element.removeEventListener("mouseenter", gaugeController.leaveSelected)
+    });
+
+    console.log(divElements)
+
+    selected.addEventListener("mouseenter", gaugeController.enterSelected)
+    selected.addEventListener("mouseleave", gaugeController.leaveSelected)
 
     if (prev) {
       prev.classList = [];
@@ -60,6 +74,7 @@ export default function SliderEvent() {
     var selected_title = selected.textContent;
     return selected_title.trim();
   };
+
   this.nextSiblings = (sibling) => {
     let nextSibling = sibling.nextElementSibling;
     let siblings = [];
@@ -79,4 +94,5 @@ export default function SliderEvent() {
     }
     return siblings;
   };
+
 }

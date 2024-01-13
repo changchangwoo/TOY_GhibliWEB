@@ -15,6 +15,10 @@ export default function Nav({ $target }) {
   console.log($navHome);
 
   $navHome.addEventListener("click", () => {
-    routeChange("/index.html");
+    routeChange("/detail");
   });
+
+  this.render = () => {
+    
+  }
 }

@@ -20,7 +20,7 @@ body {
     /* 이미지의 중앙을 기준으로 배경을 설정 */
     /* 가로는 자동으로 조절, 세로는 100%로 유지 */
     width: 100vw;
-    height: 150vh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -89,7 +89,8 @@ body {
 
 .sliderControllerContainer {
     height: 60px;
-    margin: 60px;
+    margin-top: 60px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +146,7 @@ body {
 #sliderContainer {
     background-color: rgb(255, 255, 255, 0.5);
     overflow: hidden;
-    height: 450px;
+    height: 480px;
     position: relative;
     border-radius: 50px;
     margin-top: 30px;
@@ -173,14 +174,14 @@ body {
 #sliderContainer .hideLeft {
     left: 0%;
     opacity: 0;
-    transform: translateY(120%)translateX(-100%)
+    transform: translateY(120%)
 }
 
 
 #sliderContainer .hideRight {
     left: 100%;
     opacity: 0;
-    transform: translateY(120%)translateX(-50%)
+    transform: translateY(120%)
 }
 
 #sliderContainer .hideLeft img {
@@ -206,7 +207,7 @@ body {
 #sliderContainer .selected {
     z-index: 10;
     left: 50%;
-    transform: translateY(3%) translateX(-50%);
+    transform: translateY(7%) translateX(-50%);
 }
 
 #sliderContainer .prevLeftSecond {
@@ -233,6 +234,13 @@ body {
 
 #sliderContainer .selected img {
     width: 300px;
+    transition:  all 1s;
+}
+
+#sliderContainer .selected img:hover {
+    width: 300px;
+    filter: brightness(60%);
+    transform: scale(1.1);
 }
 
 #sliderContainer .prevLeftSecond img {
@@ -262,4 +270,18 @@ body {
 
 .footerContainer:hover {
     opacity: 1;
+}
+
+.selectedGaugeContainer {
+    width: 300px;
+    height: 5px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.selectedGauge {
+    width: 0%;
+    height: 5px;
+    background-color: white;
+    transition: all 3s;
 }

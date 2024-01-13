@@ -1,9 +1,5 @@
-import SliderEvent from "./SliderEvent.js";
-
 export default function Slider({ $parent }) {
   const $sliderContainer = document.createElement("div");
-  const sliderEvent = new SliderEvent();
-
   $sliderContainer.id = "sliderContainer";
   $sliderContainer.innerHTML = `
     <div class="hideLeft">
