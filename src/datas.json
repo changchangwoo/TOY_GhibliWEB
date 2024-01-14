@@ -1,0 +1,104 @@
+{
+  "datas": {
+    "chihiro": {
+      "eng_name": "Spirited Away",
+      "kr_name": "센과 치히로의 행방 불명",
+      "imgs": [
+        "../img/detail/chihiro0.jpg",
+        "../img/detail/chihiro1.jpg",
+        "../img/detail/chihiro2.jpg"
+      ],
+      "description": "temp"
+    },
+    "howl": {
+      "eng_name": "Howl's Moving Castle",
+      "kr_name": "하울의 움직이는 성",
+      "imgs": [
+        "../img/detail/howl0.jpg",
+        "../img/detail/howl1.jpg",
+        "../img/detail/howl2.jpg"
+      ],
+      "description": "temp"
+    },
+    "kazetachinu": {
+      "eng_name": "The Wind Rises",
+      "kr_name": "바람이 분다",
+      "imgs": [
+        "../img/detail/kazetachinu0.jpg",
+        "../img/detail/kazetachinu1.jpg",
+        "../img/detail/kazetachinu2.jpg"
+      ],
+      "description": "temp"
+    },
+    "laputa": {
+      "eng_name": "Castle in the Sky",
+      "kr_name": "천공의 성 라퓨타",
+      "imgs": [
+        "../img/detail/laputa0.jpg",
+        "../img/detail/laputa1.jpg",
+        "../img/detail/laputa2.jpg"
+      ],
+      "description": "temp"
+    },
+    "majo": {
+      "eng_name": "Kiki's Delivery Service",
+      "kr_name": "마녀배달부 키키",
+      "imgs": [
+        "../img/detail/majo0.jpg",
+        "../img/detail/majo1.jpg",
+        "../img/detail/majo2.jpg"
+      ],
+      "description": "temp"
+    },
+    "mononoke": {
+      "eng_name": "Princess Mononoke",
+      "kr_name": "원령 공주",
+      "imgs": [
+        "../img/detail/mononoke0.jpg",
+        "../img/detail/mononoke1.jpg",
+        "../img/detail/mononoke2.jpg"
+      ],
+      "description": "temp"
+    },
+    "nausicaa": {
+      "eng_name": "Nausicaä of the valley of the wind",
+      "kr_name": "바람 계곡의 나우시카",
+      "imgs": [
+        "../img/detail/nausicaa0.jpg",
+        "../img/detail/nausicaa1.jpg",
+        "../img/detail/nausicaa2.jpg"
+      ],
+      "description": "temp"
+    },
+    "ponyo": {
+      "eng_name": "Ponyo on the Cliff by the Sea",
+      "kr_name": "벼랑 위의 포뇨",
+      "imgs": [
+        "../img/detail/ponyo0.jpg",
+        "../img/detail/ponyo1.jpg",
+        "../img/detail/ponyo2.jpg"
+      ],
+      "description": "temp"
+    },
+    "porco": {
+      "eng_name": "Porco Rosso",
+      "kr_name": "붉은 돼지",
+      "imgs": [
+        "../img/detail/porco0.jpg",
+        "../img/detail/porco1.jpg",
+        "../img/detail/porco2.jpg"
+      ],
+      "description": "temp"
+    },
+    "totoro": {
+      "eng_name": "My Neighbor Totoro",
+      "kr_name": "이웃집 토토로",
+      "imgs": [
+        "../img/detail/totoro0.jpg",
+        "../img/detail/totoro1.jpg",
+        "../img/detail/totoro2.jpg"
+      ],
+      "description": "temp"
+    }
+  }
+}

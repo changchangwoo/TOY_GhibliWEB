@@ -1,4 +1,5 @@
-import { routeChange } from "../utils/router.js";
+import { routeChange } from "../Utils/router.js";
+import { setMainAnimation } from "../Utils/setAnimation.js";
 
 export default function Nav({ $target }) {
   const $navContainer = document.createElement("div");
@@ -13,6 +14,10 @@ export default function Nav({ $target }) {
 
   const $navHome = document.querySelector("ul li");
   $navHome.addEventListener("click", () => {
+    const { pathname } = location
+    if(pathname === '/index.html') {
+      setMainAnimation()
+    }
     routeChange("/index.html");
   });
 

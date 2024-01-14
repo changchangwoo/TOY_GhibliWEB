@@ -1,4 +1,4 @@
-import { init } from "./utils/router.js";
+import { init } from "./Utils/router.js";
 import MainPage from "./MainPage/MainPage.js";
 import DetailPage from "./DetailPage/DetailPage.js";
 
@@ -13,7 +13,7 @@ export default function App({ $target }) {
       mainPage.render();
     } else if (pathname.indexOf("/detail/") === 0) {
       const [, , detailMovie] = pathname.split("/");
-      detailPage.render();
+      detailPage.render({detailName : detailMovie});
     }
   };
 

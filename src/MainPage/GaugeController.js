@@ -1,4 +1,5 @@
-import { routeChange } from "../utils/router.js";
+import { routeChange } from "../Utils/router.js";
+import { setMainAnimation } from "../Utils/setAnimation.js";
 
 export default function GaugeController({ $parent }) {
   const $selectedGauge = document.createElement("div");
@@ -17,10 +18,10 @@ export default function GaugeController({ $parent }) {
     $gauge.style.width = "100%";
     $gauge.addEventListener("transitionend", function handleTransitionEnd() {
       if ($gauge.style.width === "100%") {
+        setMainAnimation()
         let currentName = document.querySelector(".selected img");
         const pathAfterSource = currentName.src.replace(/.*\/source\//, "");
         const url = pathAfterSource.replace(/\.[^.]+$/, "");
-        setMainAnimation();
         routeChange(`/detail/${url}`);
       }
       $gauge.removeEventListener("transitionend", handleTransitionEnd);
@@ -32,19 +33,5 @@ export default function GaugeController({ $parent }) {
     $gauge.style.width = "0%";
   };
 
-  function setMainAnimation() {
-    const $mainLogo = document.querySelector("#mainLogo");
-    const $subLogo = document.querySelector("#subLogo");
-    const $sliderControllerContainer = document.querySelector(
-      ".sliderControllerContainer"
-    );
-    const $sliderContainer = document.querySelector("#sliderContainer");
-    const $gauge = document.querySelector(".selectedGauge");
 
-    $mainLogo.classList.remove("show");
-    $subLogo.classList.remove("show");
-    $sliderControllerContainer.classList.remove("show");
-    $sliderContainer.classList.remove("show");
-    $gauge.style.width = "0%";
-  }
 }

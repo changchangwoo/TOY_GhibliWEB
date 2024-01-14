@@ -1,9 +1,13 @@
-import { delay } from "../utils/delay.js";
+import { delay } from "../Utils/delay.js";
 
 export default function Slider({ $parent }) {
   const $sliderContainer = document.createElement("div");
   $sliderContainer.id = "sliderContainer";
   $sliderContainer.innerHTML = `
+  <div class="hideLeft">
+바람이 분다
+      <img src="source/kazetachinu.jpg">
+  </div>
     <div class="hideLeft">
     센과 치히로의 행방불명
         <img src="source/chihiro.jpg">
@@ -37,8 +41,8 @@ export default function Slider({ $parent }) {
     <img src="source/porco.jpg">
 </div>
 <div class="hideRight">
-바람 계곡의 나우시카
-<img src="source/nausicaa.jpg">
+천공의 성 라퓨타
+<img src="source/laputa.jpg">
 </div>
     `;
 
