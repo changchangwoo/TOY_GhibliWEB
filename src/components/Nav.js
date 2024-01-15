@@ -1,5 +1,6 @@
 import { routeChange } from "../Utils/router.js";
-import { setMainAnimation } from "../Utils/setAnimation.js";
+import { setMainAnimation, setDetailAnimation } from "../Utils/setAnimation.js";
+
 
 export default function Nav({ $target }) {
   const $navContainer = document.createElement("div");
@@ -17,6 +18,8 @@ export default function Nav({ $target }) {
     const { pathname } = location
     if(pathname === '/index.html') {
       setMainAnimation()
+    } else if (pathname.indexOf('/detail') === 0) {
+      setDetailAnimation()
     }
     routeChange("/index.html");
   });

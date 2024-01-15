@@ -13,10 +13,14 @@ body {
 }
 
 
-a, a:visited {
-    text-decoration: none; /* 밑줄 제거 */
-    color: inherit; /* 기본 색상으로 설정 */
-  }
+a,
+a:visited {
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: inherit;
+    /* 기본 색상으로 설정 */
+}
+
 .mainPage {
     background-image: url('./img/main.png');
     background-size: cover;
@@ -37,6 +41,8 @@ a, a:visited {
     font-size: 80px;
     color: white;
     position: relative;
+    text-align: center;
+    margin: auto;
     margin-top: 100px;
 }
 
@@ -46,6 +52,7 @@ a, a:visited {
     font-family: 'Inter', sans-serif;
     font-size: 50px;
     color: white;
+    margin: auto;
 }
 
 #mainLogo,
@@ -90,7 +97,7 @@ a, a:visited {
 }
 
 .navConatiner ul li:hover {
-    font-size: 30px
+    color: rgb(255, 255, 255, 0.5);
 }
 
 .sliderControllerContainer {
@@ -121,7 +128,8 @@ a, a:visited {
 .prevBtn:hover,
 .nextBtn:hover {
     width: 40px;
-    height: 70px;
+    height: 60px;
+    opacity: 0.5;
 }
 
 .prevBtn img,
@@ -291,7 +299,7 @@ a, a:visited {
     height: 100vh;
     overflow: hidden;
     opacity: 0;
-    transition: all 1s;
+    transition: all 0.5s;
     z-index: 5;
 }
 
@@ -299,17 +307,43 @@ a, a:visited {
     opacity: 1;
 }
 
-.detailSection {
-    width: 300vw;
-    height: 100%;
+#detailDescriptionContainer {
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
     display: flex;
-    z-index: 3;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 1s;
 }
 
-#detailSlide0, #detailSlide1, #detailSlide1 {
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    flex: 1;
+#detailDescriptionContainer.show {
+    opacity: 1;
+    
+}
+
+
+#descriptionBox {
+    width: 80%;
+    height: 100%;
+    background-color: rgb(255, 255, 255, 0.7);
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 40px;
+}
+
+#descriptionOnOff {
+    margin: auto;
+    width: 70%;
+    font-size: 18px;
+    text-align: right;
+    color: white;
+    opacity: 0;
+}
+
+#descriptionOnOff.show {
+    opacity: 1;
 }
