@@ -1,4 +1,4 @@
-import { delay } from "../Utils/delay.js";
+import { delay } from "../utils/delay.js";
 import SliderEvent from "./SliderEvent.js";
 
 export default function SliderController({ $parent }) {

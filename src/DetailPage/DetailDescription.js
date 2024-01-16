@@ -1,4 +1,4 @@
-import { delay } from "../Utils/delay.js";
+import { delay } from "../utils/delay.js";
 import ImageController from "./ImageController.js";
 
 export default function DetailDescription({ $parent }) {

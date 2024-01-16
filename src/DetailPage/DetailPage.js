@@ -1,5 +1,5 @@
-import CreateLogo from "../Components/CreateLogo.js";
-import { delay } from "../Utils/delay.js";
+import CreateLogo from "../components/CreateLogo.js";
+import { delay } from "../utils/delay.js";
 import DescriptionOnOff from "./DescriptionOnOff.js";
 import DetailDescription from "./DetailDescription.js";
 import setDetailPage from "./SetDetailPage.js";

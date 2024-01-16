@@ -1,4 +1,4 @@
-import { init } from "./Utils/router.js";
+import { init } from "./utils/router.js";
 import MainPage from "./MainPage/MainPage.js";
 import DetailPage from "./DetailPage/DetailPage.js";
 
