@@ -1,30 +1,184 @@
+/* 데스크탑 */
 html,
-body,
-main {
+body {
     width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #00ADEF;
+
+}
+
+#App {
+    width: 100%;
+    height: 100%;
+    background-color: #00ADEF;
+}
+
+
+a,
+a:visited {
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: inherit;
+    /* 기본 색상으로 설정 */
+}
+
+.mainPage {
+    background-image: url('./img/main.png');
+    background-size: cover;
+    background-position: center bottom;
+    /* 이미지 크기를 50%로 축소 */
+    /* 이미지의 중앙을 기준으로 가로는 중앙, 세로는 위로 이동 */
+    /* 이미지의 중앙을 기준으로 배경을 설정 */
+    /* 가로는 자동으로 조절, 세로는 100%로 유지 */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition : 1s
+}
+
+#mainLogo {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-size: 80px;
+    color: white;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#subLogo {
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Inter', sans-serif;
+    font-size: 50px;
+    color: white;
+    margin: auto;
+}
+
+#mainLogo,
+#subLogo {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+#mainLogo.show,
+#subLogo.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navConatiner {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 10;
+}
+
+.navConatiner ul {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: skyblue;
+    font-size: 24px;
+    font-weight: bold;
+    list-style: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
+
+.navConatiner ul li {
+    width: 150px;
+    text-align: center;
+    margin-left: 20px;
+    transition: all 0.4s;
+}
+
+.navConatiner ul li:hover {
+    color: rgb(255, 255, 255, 0.5);
+}
+
+.sliderControllerContainer {
+    height: 60px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s
+}
+
+.sliderControllerContainer.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.prevBtn,
+.nextBtn {
+    width: 40px;
+    height: 60px;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+    width: 40px;
+    height: 60px;
+    opacity: 0.5;
+}
+
+.prevBtn img,
+.nextBtn img {
+    width: 100%;
+    height: 100%;
+}
+
+.selectedName {
+    color: white;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    width: 500px;
+    text-align: center;
+}
+
+/* Slider */
 
 #sliderContainer {
     background-color: rgb(255, 255, 255, 0.7);
+    width: 60%;
     overflow: hidden;
-    height: 600px;
+    height: 480px;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 30px;
+    opacity: 0;
+    transition: all 1s;
+}
+
+#sliderContainer.show {
+    opacity: 1;
 }
 
 #sliderContainer div {
     position: absolute;
-    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    transition: transform 1s, left 1s, opacity 1s;
     opacity: 1;
+    font-size: 0px;
 }
 
 #sliderContainer div img {
-    width: 400px;
+    width: 300px;
     transition: width 1s;
     border-radius: 20px;
 }
@@ -32,89 +186,237 @@ main {
 #sliderContainer .hideLeft {
     left: 0%;
     opacity: 0;
-    transform: translateY(50%)translateX(-50%)
+    transform: translateY(120%)
 }
 
 
 #sliderContainer .hideRight {
     left: 100%;
     opacity: 0;
-    transform: translateY(50%)translateX(-50%)
+    transform: translateY(120%)
 }
 
 #sliderContainer .hideLeft img {
-    width: 200px;
+    width: 100px;
 }
 
 #sliderContainer .hideRight img {
-    width: 200px;
+    width: 100px;
 }
 
 #sliderContainer .prev {
     z-index: 5;
-    left: 30%;
-    transform: translateY(50px)translateX(-50%)
+    left: 25%;
+    transform: translateY(100px)translateX(-30%);
+    opacity: 0.8;
+
 }
 
 #sliderContainer .next {
     z-index: 5;
-    left: 70%;
-    transform: translateY(50px)translateX(-50%)
+    left: 75%;
+    transform: translateY(100px)translateX(-70%);
+    opacity: 0.8;
 }
 
 #sliderContainer .selected {
     z-index: 10;
     left: 50%;
-    transform: translateY(3%) translateX(-50%);
+    transform: translateY(7%) translateX(-50%);
 }
 
 #sliderContainer .prevLeftSecond {
     z-index: 3;
-    left: 15%;
-    transform: translateY(50%) translateX(-50%);
-    opacity: 0.7;
+    left: 7%;
+    transform: translateY(70%) translateX(0%);
+    opacity: 0.4;
 }
 
 #sliderContainer .nextRightSecond {
     z-index: 3;
-    left: 85%;
-    transform: translateY(50%) translateX(-50%);
-    opacity: 0.7;
+    left: 93%;
+    transform: translateY(70%) translateX(-100%);
+    opacity: 0.4;
 }
 
 #sliderContainer .prev img {
-    width: 300px;
+    width: 200px;
 }
 
 #sliderContainer .next img {
-    width: 300px;
+    width: 200px;
 }
 
 #sliderContainer .selected img {
-    width: 400px;
+    width: 300px;
+    transition: width 1s, transform 3s, filter 3s;
+}
+
+#sliderContainer .selected img:hover {
+    width: 300px;
+    filter: brightness(60%);
+    transform: scale(1.1);
 }
 
 #sliderContainer .prevLeftSecond img {
-    width: 200px;
+    width: 150px;
 }
 
 #sliderContainer .nextRightSecond img {
-    width: 200px;
+    width: 150px;
 }
 
-#btnContainer {
+.footerContainer {
     height: 50px;
     width: 100%;
-    top: 15%;
-    position: absolute;
-    transform: translateY(-70%);
+    position: fixed;
+    bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 20px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
+    z-index: 20;
+    opacity: 0;
+    transition: all 0.5s;
 }
 
-.btn {
-    width: 100px;
+.footerContainer:hover {
+    opacity: 1;
+}
+
+.selectedGaugeContainer {
+    width: 300px;
+    height: 5px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.selectedGauge {
+    width: 0%;
+    height: 5px;
+    background-color: white;
+    transition: all 2s;
+}
+
+/* DetailPage */
+
+.detailPage {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 5;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.detailPage.show {
+    opacity: 1;
+}
+
+#detailDescriptionContainer {
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 1s;
+}
+
+#detailDescriptionContainer.show {
+    opacity: 1;
+
+}
+
+
+#descriptionBox {
+    width: 80%;
     height: 100%;
-    margin: 20px;
+    background-color: rgb(255, 255, 255, 0.7);
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 40px;
+}
+
+#descriptionOnOff {
+    margin: auto;
+    width: 70%;
+    font-size: 18px;
+    text-align: right;
+    color: white;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#descriptionOnOff.show {
+    opacity: 1;
+}
+
+#descriptionOnOff:hover {
+    opacity: 1;
+}
+
+/* 모바일 (-835px) */
+
+@media only screen and (max-width: 835px) {
+    #mainLogo {
+        font-size: 60px;
+        margin-top: 150px;
+    }
+
+    #subLogo {
+        font-size: 30px
+    }
+
+    #detailDescriptionContainer {
+        margin-top: 50px;
+    }
+
+    .nextRightSecond {
+        display: none;
+    }
+
+    .prevLeftSecond {
+        display: none;
+    }
+
+    .next {
+        display: none;
+    }
+
+    .prev {
+        display: none;
+    }
+    .selected {
+        transition: all 1s; 
+    }
+
+    .mainPage {
+        background-image: url('./img/main.png');
+        background-size: cover;
+        background-position: center right;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .navConatiner ul {
+        justify-content: center;
+    }
+
+    #sliderContainer {
+        width: 50%;
+        height: 500px;
+        margin: auto;
+        margin-top: 30px;
+    }
+
 }
