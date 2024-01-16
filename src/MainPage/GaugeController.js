@@ -18,9 +18,9 @@ export default function GaugeController({ $parent }) {
     $gauge.style.width = "100%";
     $gauge.addEventListener("transitionend", function handleTransitionEnd() {
       if ($gauge.style.width === "100%") {
-        setMainAnimation()
+        setMainAnimation();
         let currentName = document.querySelector(".selected img");
-        const pathAfterSource = currentName.src.replace(/.*\/source\//, "");
+        const pathAfterSource = currentName.src.replace(/.*\/carousel\//, "");
         const url = pathAfterSource.replace(/\.[^.]+$/, "");
         routeChange(`/detail/${url}`);
       }
@@ -32,6 +32,4 @@ export default function GaugeController({ $parent }) {
     var $gauge = document.querySelector(".selectedGauge");
     $gauge.style.width = "0%";
   };
-
-
 }
