@@ -6,7 +6,7 @@ export default function App({ $target }) {
   const mainPage = new MainPage({ $target });
   const detailPage = new DetailPage({ $target });
 
-  this.route = () => {
+  this.route = async() => {
     $target.innerHTML = ``;
     const { pathname } = location;
     if (pathname === "/index.html") {

@@ -30,6 +30,13 @@ export default function DetailDescription({ $parent }) {
     let isClickable = true; 
 
     this.render = async (imgs) => {
+        let $mainLogo = document.querySelector('#mainLogo')
+        let $subLogo = document.querySelector('#subLogo')
+        $mainLogo.style.width = '70%'
+        $mainLogo.style.textAlign = 'right'
+        $subLogo.style.width = '70%'
+        $subLogo.style.textAlign = 'right'
+
         $detailDescriptionContainer.classList.remove("show");
         $parent.appendChild($detailDescriptionContainer);
         await delay(500);

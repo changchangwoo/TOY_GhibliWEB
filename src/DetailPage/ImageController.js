@@ -1,8 +1,9 @@
-export default function ImageController(element, imgs, page) {
+import { delay } from "../Utils/delay.js";
+
+export default async function ImageController(element, imgs, page) {
     var current_src = page.style.backgroundImage;
     console.log(current_src);
 
-    // 정규 표현식 수정
     const regex = /url\(".*\/([^\/]+)(\d+)\.jpg"\)/; 
     var imageName = "";
     var numberBeforeJpg = 0;
@@ -25,11 +26,7 @@ export default function ImageController(element, imgs, page) {
         newNumber = Number(numberBeforeJpg) - 1;
         if (newNumber < 0) newNumber = imgs.length - 1;
     }
-
-    // 정규 표현식에 맞게 URL 업데이트
     current_src = current_src.replace(new RegExp(`${imageName}\\d+\\.jpg`), `${imageName}${newNumber}.jpg`);
+    await delay(500)
     page.style.backgroundImage = current_src
-    
-    // 업데이트된 URL 확인
-    console.log(current_src);
 }
