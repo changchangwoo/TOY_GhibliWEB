@@ -6,14 +6,15 @@ export default function App({ $target }) {
   const mainPage = new MainPage({ $target });
   const detailPage = new DetailPage({ $target });
 
-  this.route = async() => {
+  this.route = async () => {
     $target.innerHTML = ``;
     const { pathname } = location;
+    console.log(pathname);
     if (pathname === "/index.html") {
       mainPage.render();
     } else if (pathname.indexOf("/detail/") === 0) {
       const [, , detailMovie] = pathname.split("/");
-      detailPage.render({detailName : detailMovie});
+      detailPage.render({ detailName: detailMovie });
     }
   };
 
