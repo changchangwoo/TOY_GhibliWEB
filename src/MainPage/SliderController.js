@@ -11,8 +11,8 @@ export default function SliderController({ $parent }) {
   const $nextBtnimg = document.createElement("img");
   var selectedName = "";
 
-  $prevBtnimg.src = "../../source/prevBtn.png";
-  $nextBtnimg.src = "../../source/nextBtn.png";
+  $prevBtnimg.src = "../../img/prevBtn.png";
+  $nextBtnimg.src = "../../img/nextBtn.png";
 
   $sliderControllerContainer.className = "sliderControllerContainer";
   $selectedName.className = "selectedName";

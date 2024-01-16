@@ -2,7 +2,6 @@ import CreateLogo from "../Components/CreateLogo.js";
 import { delay } from "../Utils/delay.js";
 import DescriptionOnOff from "./DescriptionOnOff.js";
 import DetailDescription from "./DetailDescription.js";
-import ImageController from "./ImageController.js";
 import setDetailPage from "./SetDetailPage.js";
 
 export default function DetailPage({ $target }) {
@@ -16,7 +15,7 @@ export default function DetailPage({ $target }) {
   this.render = async ({ detailName }) => {
     // url 기반으로 json 데이터 읽기
     try {
-      var response = await fetch('../src/datas.json');
+      var response = await fetch('./datas.json');
       var { datas } = await response.json();
       data = datas[detailName]
     } catch (error) {
