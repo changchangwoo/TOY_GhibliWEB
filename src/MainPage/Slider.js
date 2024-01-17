@@ -1,9 +1,9 @@
-import { delay } from "../Utils/delay.js";
+import { delay } from "../utils/delay.js";
 
 export default function Slider({ $parent }) {
-    const $sliderContainer = document.createElement("div");
-    $sliderContainer.id = "sliderContainer";
-    $sliderContainer.innerHTML = `
+  const $sliderContainer = document.createElement("div");
+  $sliderContainer.id = "sliderContainer";
+  $sliderContainer.innerHTML = `
   <div class="hideLeft">
 바람이 분다
       <img src="./img/carousel/kazetachinu.jpg">
@@ -46,10 +46,10 @@ export default function Slider({ $parent }) {
 </div>
     `;
 
-    this.render = async () => {
-        $parent.appendChild($sliderContainer);
-        $sliderContainer.classList.remove("show");
-        await delay(500);
-        $sliderContainer.classList.add("show");
-    };
+  this.render = async () => {
+    $parent.appendChild($sliderContainer);
+    $sliderContainer.classList.remove("show");
+    await delay(500);
+    $sliderContainer.classList.add("show");
+  };
 }

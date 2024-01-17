@@ -1,5 +1,5 @@
-import { routeChange } from "../Utils/router.js";
-import { setMainAnimation } from "../Utils/setAnimation.js";
+import { routeChange } from "../utils/router.js";
+import { setMainAnimation } from "../utils/setAnimation.js";
 
 export default function GaugeController({ $parent }) {
   const $selectedGauge = document.createElement("div");
@@ -22,7 +22,7 @@ export default function GaugeController({ $parent }) {
         let currentName = document.querySelector(".selected img");
         const pathAfterSource = currentName.src.replace(/.*\/carousel\//, "");
         const url = pathAfterSource.replace(/\.[^.]+$/, "");
-        routeChange(`/detail/${url}`);
+        routeChange(`/TOY_GhibliWEB/detail/${url}`);
       }
       $gauge.removeEventListener("transitionend", handleTransitionEnd);
     });

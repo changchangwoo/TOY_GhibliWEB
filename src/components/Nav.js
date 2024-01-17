@@ -1,6 +1,5 @@
-import { routeChange } from "../Utils/router.js";
-import { setMainAnimation, setDetailAnimation } from "../Utils/setAnimation.js";
-
+import { routeChange } from "../utils/router.js";
+import { setMainAnimation, setDetailAnimation } from "../utils/setAnimation.js";
 
 export default function Nav({ $target }) {
   const $navContainer = document.createElement("div");
@@ -15,13 +14,13 @@ export default function Nav({ $target }) {
 
   const $navHome = document.querySelector("ul li");
   $navHome.addEventListener("click", () => {
-    const { pathname } = location
-    if(pathname === '/index.html') {
-      setMainAnimation()
-    } else if (pathname.indexOf('/detail') === 0) {
-      setDetailAnimation()
+    const { pathname } = location;
+    if (pathname === "/TOY_GhibliWEB/index.html" || pathname === "/TOY_GhibliWEB/") {
+      setMainAnimation();
+    } else if (pathname.indexOf("/TOY_GhibliWEB/detail") === 0) {
+      setDetailAnimation();
     }
-    routeChange("/index.html");
+    routeChange("/TOY_GhibliWEB/index.html");
   });
 
   this.render = () => {};

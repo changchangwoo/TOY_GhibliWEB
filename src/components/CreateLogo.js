@@ -1,6 +1,6 @@
-import { delay } from "../Utils/delay.js";
+import { delay } from "../utils/delay.js";
 
-export default function CreateLogo({ $parent}) {
+export default function CreateLogo({ $parent }) {
   const $mainLogo = document.createElement("div");
   const $subLogo = document.createElement("div");
 
@@ -10,9 +10,9 @@ export default function CreateLogo({ $parent}) {
   $parent.appendChild($mainLogo);
   $parent.appendChild($subLogo);
 
-  this.startAnimation = async ({mainText, subText}) => {
-    $mainLogo.innerHTML = mainText
-    $subLogo.innerHTML = subText
+  this.startAnimation = async ({ mainText, subText }) => {
+    $mainLogo.innerHTML = mainText;
+    $subLogo.innerHTML = subText;
 
     const addAndRemoveClass = async (element, className) => {
       element.classList.remove(className);
@@ -22,6 +22,4 @@ export default function CreateLogo({ $parent}) {
     await addAndRemoveClass($mainLogo, "show");
     await addAndRemoveClass($subLogo, "show");
   };
-
-
 }

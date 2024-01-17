@@ -1,4 +1,4 @@
-import { delay } from "../Utils/delay.js";
+import { delay } from "../utils/delay.js";
 import SliderEvent from "./SliderEvent.js";
 
 export default function SliderController({ $parent }) {
@@ -11,8 +11,8 @@ export default function SliderController({ $parent }) {
   const $nextBtnimg = document.createElement("img");
   var selectedName = "";
 
-  $prevBtnimg.src = "../../img/prevBtn.png";
-  $nextBtnimg.src = "../../img/nextBtn.png";
+  $prevBtnimg.src = "./img/prevBtn.png";
+  $nextBtnimg.src = "./img/nextBtn.png";
 
   $sliderControllerContainer.className = "sliderControllerContainer";
   $selectedName.className = "selectedName";
