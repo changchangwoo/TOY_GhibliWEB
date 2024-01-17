@@ -15,12 +15,12 @@ export default function Nav({ $target }) {
   const $navHome = document.querySelector("ul li");
   $navHome.addEventListener("click", () => {
     const { pathname } = location;
-    if (pathname === "/TOY_GhibliWEB/") {
+    if (pathname === "/TOY_GhibliWEB/index.html") {
       setMainAnimation();
-    } else if (pathname.indexOf("/detail") === 0) {
+    } else if (pathname.indexOf("/TOY_GhibliWEB/detail") === 0) {
       setDetailAnimation();
     }
-    routeChange("/index.html");
+    routeChange("/TOY_GhibliWEB/index.html");
   });
 
   this.render = () => {};

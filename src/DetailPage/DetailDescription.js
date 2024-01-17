@@ -14,8 +14,8 @@ export default function DetailDescription({ $parent }) {
   $nextBtn.className = "nextBtn";
   $descriptionBox.id = "descriptionBox";
   $detailDescriptionContainer.id = "detailDescriptionContainer";
-  $prevBtnimg.src = "../../img/prevBtn.png";
-  $nextBtnimg.src = "../../img/nextBtn.png";
+  $prevBtnimg.src = "./img/prevBtn.png";
+  $nextBtnimg.src = "./img/nextBtn.png";
 
   $prevBtn.appendChild($prevBtnimg);
   $nextBtn.appendChild($nextBtnimg);

@@ -9,11 +9,11 @@ export default function App({ $target }) {
   this.route = async () => {
     $target.innerHTML = ``;
     const { pathname } = location;
-    console.log(pathname);
-    if (pathname === "/index.html") {
+    if (pathname === "/TOY_GhibliWEB/index.html") {
       mainPage.render();
-    } else if (pathname.indexOf("/detail/") === 0) {
-      const [, , detailMovie] = pathname.split("/");
+    } else if (pathname.indexOf("/TOY_GhibliWEB/detail/") === 0) {
+      const [, , , detailMovie] = pathname.split("/");
+      console.log(detailMovie);
       detailPage.render({ detailName: detailMovie });
     }
   };

@@ -27,6 +27,7 @@ export default function DetailPage({ $target }) {
     // detailPage 렌더링
     $page.classList.remove("show");
     $target.appendChild($page);
+
     await delay(200);
     $page.classList.add("show");
 
