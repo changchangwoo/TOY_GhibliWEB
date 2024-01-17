@@ -15,7 +15,7 @@ export default function Nav({ $target }) {
   const $navHome = document.querySelector("ul li");
   $navHome.addEventListener("click", () => {
     const { pathname } = location;
-    if (pathname === "/TOY_GhibliWEB/index.html") {
+    if (pathname === "/TOY_GhibliWEB/index.html" || pathname === "/TOY_GhibliWEB/") {
       setMainAnimation();
     } else if (pathname.indexOf("/TOY_GhibliWEB/detail") === 0) {
       setDetailAnimation();

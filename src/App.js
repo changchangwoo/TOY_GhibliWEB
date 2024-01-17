@@ -9,7 +9,7 @@ export default function App({ $target }) {
   this.route = async () => {
     $target.innerHTML = ``;
     const { pathname } = location;
-    if (pathname === "/TOY_GhibliWEB/index.html") {
+    if (pathname === "/TOY_GhibliWEB/index.html" || pathname === "/TOY_GhibliWEB/") {
       mainPage.render();
     } else if (pathname.indexOf("/TOY_GhibliWEB/detail/") === 0) {
       const [, , , detailMovie] = pathname.split("/");
