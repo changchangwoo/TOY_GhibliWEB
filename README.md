@@ -6,7 +6,7 @@ https://changchangwoo.github.io/TOY_GhibliWEB/
 <br><br>지브리 스튜디오의 영화 줄거리를 간략하게 소개하는 SPA웹사이트입니다. 학습 프로젝트로 JavaScript의 DOM 처리 및 SPA 구조에 대한 이해 향상을 목적으로 구현하였습니다. 
 
 #### 2. 기능 동작
-<img src="https://private-user-images.githubusercontent.com/50562562/297436292-225d6b07-0cea-4a26-b922-42c9ab9b1dde.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU1MDY5MDYsIm5iZiI6MTcwNTUwNjYwNiwicGF0aCI6Ii81MDU2MjU2Mi8yOTc0MzYyOTItMjI1ZDZiMDctMGNlYS00YTI2LWI5MjItNDJjOWFiOWIxZGRlLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMTclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTE3VDE1NTAwNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE3OGYyYzZmODU1NjBiZjU3NTczM2QzYWMwMTY5MDE3ZTc2YmU2ZTgxNDM2N2Q1MmExNmU2NjcwMDQwMDEyNzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.1ksnc44OGulUXvV9L-BdVSiJogeCohD1S1pBrGOwfs0">
+<img src="https://github.com/changchangwoo/TOY_GhibliWEB/assets/50562562/225d6b07-0cea-4a26-b922-42c9ab9b1dde">
 
 #### 3. 프로젝트 목표
 
